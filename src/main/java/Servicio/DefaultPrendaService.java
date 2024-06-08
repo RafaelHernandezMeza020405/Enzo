@@ -35,6 +35,13 @@ public class DefaultPrendaService implements PrendaService{
     public Prenda actualizarPrenda(long id, Prenda prenda) throws PrendaNotFoundException {
         Prenda existingPrenda = obtenerPrendaPorId(id);
         existingPrenda.setNombre(prenda.getNombre());
+        existingPrenda.setFoto(prenda.getFoto());
+        existingPrenda.setEstado(prenda.getEstado());
+        existingPrenda.setColor(prenda.getColor());
+        existingPrenda.setTalla(prenda.getTalla());
+        existingPrenda.setPrecio(prenda.getPrecio());
+        existingPrenda.setDescripcion(prenda.getDescripcion());
+        existingPrenda.setTipo_catalogo(prenda.getTipo_catalogo());
         prendaRepository.persist(existingPrenda);
         return existingPrenda;
     }
